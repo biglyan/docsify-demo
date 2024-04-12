@@ -14,15 +14,15 @@ jobs:
       # 切换分支获取源码
       - name: Checkout # step的名称，将会在 github action 的控制台中显示
         # 选择一个action，可以理解为若干 steps.run，有利于代码复用
-        uses: actions/checkout@master
-      # 安装使用 node:21
-      - name: use Node.js 21
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v4
+      # 安装使用 node:20
+      - name: use Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 21
+          node-version: 20
       # 部署到腾讯云服务器
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.0.7
+        uses: easingthemes/ssh-deploy@main
         env:
             # 本地.ssh文件下的私钥id_rsa，存在secrets的TOKEN中
             SSH_PRIVATE_KEY: ${{ secrets.TOKEN }} 
