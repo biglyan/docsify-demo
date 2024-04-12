@@ -41,5 +41,3 @@ jobs:
               ls -al
             SCRIPT_AFTER: |
               whoami
-              ls -al
-              echo $RSYNC_STDOUT
